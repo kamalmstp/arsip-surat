@@ -56,7 +56,15 @@
 							<div class="item form-group">
 								<label class="control-label col-md-3 col-sm-3 col-xs-12">Tujuan<span class="required">&nbsp; :</span></label>
 								<div class="col-md-6 col-sm-6 col-xs-12">
-									<input type="text" name="tujuan" class="form-control col-md-7 col-xs-12" required="required">
+									<!-- <input type="text" name="tujuan" class="form-control col-md-7 col-xs-12" required="required"> -->
+									<select name="tujuan" id="tujuan"class="form-control col-md-7 col-xs-12" required="required">
+										<option value="">Pilih Tujuan</option>
+										<option value="sekretaris">Sekretariat</option>
+										<option value="pdik">Bidang P.D. & Informasi kessos</option>
+										<option value="limjamsos">Bidang Limjamsos & P.K.</option>
+										<option value="rehsos">Bidang Rehsos</option>
+										<option value="dayasos">Bidang Dayasos</option>
+									</select>
 								</div>
 							</div>
 							<div class="item form-group">

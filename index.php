@@ -108,6 +108,11 @@
 											<li><a href="index.php?page=agd_surat_keluar">Surat keluar</a></li>
 										</ul>
 									</li>
+									<li><a href="index.php?page=sekretaris"><i class="fa fa-print"></i> Sekretariat</a></li>
+									<li><a href="index.php?page=pdik"><i class="fa fa-print"></i> Bidang PDIK</a></li>
+									<li><a href="index.php?page=limjamsos"><i class="fa fa-print"></i> Bidang Limjamsos & PK</a></li>
+									<li><a href="index.php?page=rehsos"><i class="fa fa-print"></i> Bidang Rehsos</a></li>
+									<li><a href="index.php?page=dayasos"><i class="fa fa-print"></i> Bidang Dayasos</a></li>
 								</ul>
 							</div>
 							<div class="menu_section">
@@ -210,6 +215,16 @@
 							include 'agd_surat_masuk.php';
 						}elseif ($_GET['page']=="agd_surat_keluar") {
 							include 'agd_surat_keluar.php';
+						}elseif ($_GET['page']=="sekretaris") {
+							include 'sekretaris.php';
+						}elseif ($_GET['page']=="pdik") {
+							include 'pdik.php';
+						}elseif ($_GET['page']=="limjamsos") {
+							include 'limjamsos.php';
+						}elseif ($_GET['page']=="rehsos") {
+							include 'rehsos.php';
+						}elseif ($_GET['page']=="dayasos") {
+							include 'dayasos.php';
 						//settings  
 						}elseif ($_GET['page']=="users") {
 							include 'users.php';
