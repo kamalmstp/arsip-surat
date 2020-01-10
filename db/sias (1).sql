@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 10, 2020 at 03:03 AM
+-- Generation Time: Jan 10, 2020 at 11:44 AM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.2.9
 
@@ -45,7 +45,9 @@ CREATE TABLE `disposisi` (
 INSERT INTO `disposisi` (`id_disp`, `id_surat`, `tujuan`, `isi_disposisi`, `sifat`, `batas_waktu`, `catatan`) VALUES
 (1, '28', 'kepala', 'isi', 'Segera', '2020-01-11', '123'),
 (2, '29', 'sekretaris', 'ifjid', 'Penting', '2020-01-11', 'catacta'),
-(3, '30', 'pdik', 'isis', 'Segera', '2020-01-18', 'catatn');
+(3, '30', 'pdik', 'isis', 'Segera', '2020-01-18', 'catatn'),
+(4, '31', 'rehsos', 'isi', 'Biasa', '2020-01-11', 'k'),
+(5, '31', 'dayasos', 'sdfdhgjh', 'Segera', '2020-01-17', 'shkjk');
 
 -- --------------------------------------------------------
 
@@ -104,7 +106,9 @@ INSERT INTO `surat_masuk` (`id`, `no_agenda`, `no_surat`, `jenis_surat`, `tangga
 (27, '1324354576', 2435456, '23456', '2020-01-09', '2020-01-09', 'sdfghj', 'dgfhghbnm', 'cropped-logo-kominfo.png', 'Administrator'),
 (28, '12', 12, 'Undangan', '2020-01-10', '2020-01-09', 'kominfo', 'tes', 'cropped-logo-kominfo.png', 'Administrator'),
 (29, '54667', 4657687, 'surat', '2020-01-10', '2020-01-10', 'banjarmasin', 'isi', 'logo.gif', 'Administrator'),
-(30, '12', 123, 'surat', '2020-01-11', '2020-01-10', 'TEKNIk', 'rtj', 'logo.jpg', 'Administrator');
+(30, '12', 123, 'surat', '2020-01-11', '2020-01-10', 'TEKNIk', 'rtj', 'logo.jpg', 'Administrator'),
+(31, '133456', 12345, 'resmi', '2020-01-11', '2020-01-10', 'UNLAM', 'ringkas', 'user.png', 'Administrator'),
+(32, '1', 1, 'uj', '2020-01-10', '2020-01-10', 'jhkm', 'sd', 'user5.png', 'Administrator');
 
 -- --------------------------------------------------------
 
@@ -165,7 +169,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `disposisi`
 --
 ALTER TABLE `disposisi`
-  MODIFY `id_disp` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_disp` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `surat_keluar`
@@ -177,7 +181,7 @@ ALTER TABLE `surat_keluar`
 -- AUTO_INCREMENT for table `surat_masuk`
 --
 ALTER TABLE `surat_masuk`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `user`
