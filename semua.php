@@ -11,7 +11,7 @@
 	<div class="">
 		<div class="page-title">
 			<div class="title_left">
-				<h3>Data Disposisi Rehsos</h3>
+				<h3>Data Disposisi Semua Bidang</h3>
 			</div>
 		</div>
 		<div class="clearfix"></div>
@@ -23,13 +23,8 @@
 						<ul class="nav navbar-right panel_toolbox">
 							<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
 						</ul>
-						<div class="clearfix"></div>
+						<div class="clearfix"><a href="cetak_semua.php" class="btn btn-success" title="Print" type="submit" target="_blank" name="cetak"><i class="fa fa-print"></i> Cetak Semua Data</a></div>
 					</div>
-						<div class="bs-example-popovers">
-							<div class="alert alert-success alert-dismissible fade-in" role="alert">
-								<h2><strong>Rehsos</strong></h2><br>
-							</div>
-						</div>
 					<div class="x_content">
 						<table id="disposisi" class="table table-striped table-bordered table-hover">
 							<thead>
@@ -38,14 +33,15 @@
 									<th style="vertical-align: middle;"><center>No Surat</center></th>
 									<th style="vertical-align: middle;"><center>Sifat, <br> Batas Waktu</center></th>
 									<th style="vertical-align: middle;"><center>Catatan</center></th>
-									<th style="vertical-align: middle;"><center>Action</center></th>
+									<th style="vertical-align: middle;"><center>Tujuan</center></th>
+									<!-- <th style="vertical-align: middle;"><center>Action</center></th> -->
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
 									<?php
 										$no=1;
-										$query2	= "SELECT * FROM disposisi JOIN surat_masuk ON disposisi.id_surat = surat_masuk.id where tujuan = 'rehsos'";
+										$query2	= "SELECT * FROM disposisi JOIN surat_masuk ON disposisi.id_surat = surat_masuk.id";
 										$sql2	= mysqli_query($connect, $query2);
 										while ($row= mysqli_fetch_array($sql2)) {
 									?>
@@ -53,11 +49,12 @@
 									<td style="vertical-align: middle;"><?php echo $row['no_surat']; ?></td>
 									<td style="vertical-align: middle;"><?php echo $row['sifat']?>, <br><?php echo IndonesiaTgl($row['batas_waktu']);?></td>
 									<td style="vertical-align: middle;"><?php echo $row['catatan']; ?></td>
-									<td>
+									<td style="vertical-align: middle;"><?php echo $row['tujuan']; ?></td>
+									<!-- <td>
 										<center>
-                                        <a href="cetak_rehsos.php?id=<?php echo $row['id_disp']; ?>" class="btn btn-success" title="Print" type="submit" target="_blank" name="cetak"><i class="fa fa-print"></i></a>
+                                        <a href="cetak_sekretaris.php?id=<?php echo $row['id_disp']; ?>" class="btn btn-success" title="Print" type="submit" target="_blank" name="cetak"><i class="fa fa-print"></i></a>
 										</center>
-									</td>
+									</td> -->
 								</tr>
 									<?php 
 										}

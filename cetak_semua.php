@@ -1,4 +1,4 @@
-<title>Agenda Surat Masuk</title>
+<title>Laporan Data Disposisi</title>
 <?php
 	include 'koneksi.php';
 	include 'function_tanggal.php';
@@ -64,37 +64,21 @@
 		<br>
 
 			<?php
-				if (isset($_POST['cetak'])) {
-					$dari_tanggal = InggrisTgl($_POST['dari_tanggal']);
-					$sampai_tanggal= InggrisTgl($_POST['sampai_tanggal']);
-
-					//indonesia Tgl
-					$dari_tanggal_indo = IndonesiaTgl($dari_tanggal);
-					$sampai_tanggal_indo= IndonesiaTgl($sampai_tanggal);
-
-					if ($_REQUEST['dari_tanggal'] == "" || $_REQUEST['sampai_tanggal'] == "") {
-						echo '<script>
-								window.location.href="./index.php?page=agd_surat_masuk";
-						 	 </script>';
-						die();
-					}else{
-						$query	= "SELECT * FROM surat_masuk WHERE tanggal_terima BETWEEN '$dari_tanggal' AND '$sampai_tanggal'";
+						$query	= "SELECT * FROM disposisi JOIN surat_masuk ON disposisi.id_surat = surat_masuk.id";
 						$sql    = mysqli_query($connect, $query);
 			?>
 			<div class="col-md-10">
-				<h4><strong>AGENDA SURAT MASUK DARI TANGGAL <?php echo $dari_tanggal_indo ?> SAMPAI TANGGAL <?php echo $sampai_tanggal_indo; ?></strong></h4>
+				<h4><strong>LAPORAN DATA DISPOSISI</strong></h4>
 			</div>	
 				<table id="table" border="1" cellspacing="0" cellpadding="5" width="100%">
 					<thead>
 						<tr>
 							<th width="1">No</th>
-							<th>No agenda</th>
-							<th>jenis Surat</th>
 							<th>No Surat</th>
-							<th>Isi Ringkas</th>
-							<th>Asal Surat</th>
-							<th>Tanggal Surat</th>
-							<th>Tanggal Terima</th>
+							<th>Sifat</th>
+							<th>Batas Waktu</th>
+							<th>Catatan</th>
+							<th>Tujuan</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -105,27 +89,23 @@
 									
 						?>
 						<td width="1"><?php echo $no++; ?></td>
-						<td><?php echo $data['no_agenda']?></td>
-						<td><?php echo $data['jenis_surat']?></td>
 						<td><?php echo $data['no_surat']?></td>
-						<td><?php echo $data['isi_ringkas']?></td>
-						<td><?php echo $data['asal_surat']?></td>
-						<td><?php echo IndonesiaTgl($data['tanggal_surat'])?></td>
-						<td><?php echo IndonesiaTgl($data['tanggal_terima'])?></td>
+						<td><?php echo $data['sifat']?></td>
+						<td><?php echo IndonesiaTgl($data['batas_waktu'])?></td>
+						<td><?php echo $data['catatan']?></td>
+						<td><?php echo $data['tujuan']?></td>
+
 						
 					</tbody>
 					<?php			
 								}
 							}else{
-								echo '<tr><td colspan="9"><center><h2><strong>Tidak ada Agenda surat Masuk</></strong></h2></center></td></tr>';
+								echo '<tr><td colspan="9"><center><h2><strong>Tidak ada Data</></strong></h2></center></td></tr>';
 							}
-						}
-						}
 					?>
 						
 				</table>
-
-				<div id="lead">
+			<div id="lead">
 				<p>Kepala Dinas Sosial</p>
 				<div style="height: 50px;"></div>
 				<?php 

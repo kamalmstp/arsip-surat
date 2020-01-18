@@ -141,12 +141,23 @@
 			?>			
 		</table>
 		<div id="lead">
-			<!-- <p>Mengetahui,<br>
-			Kepala Dinas Sosial</p>
-			<div style="height: 50px"></div>
-			<p class="lead">Nama</p>
-			<p>NIP</p> -->
-		</div>
+				<p>Kepala Dinas Sosial</p>
+				<div style="height: 50px;"></div>
+				<?php 
+				$query = mysqli_query($connect, "SELECT nama_kepala, nip FROM instansi");
+				list($kepala,$nip) = mysqli_fetch_array($query);
+				if(!empty($kepala)){
+					echo '<p class="lead">'.$kepala.'</p>';
+				} else {
+					echo '<p class="lead">Ketua Dinas Sosial</p>';
+				}
+				if(!empty($nip)){
+					echo '<p>NIP. '.$nip.'</p>';
+				} else {
+					echo '<p>NIP. -</p>';
+				}
+				?>
+			</div>
 	</div>	
 	
 	<script type="text/javascript">

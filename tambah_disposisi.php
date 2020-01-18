@@ -12,7 +12,7 @@
 			list($id_surat) = mysqli_fetch_array($sql);
 
 			$tujuan  		= $_POST['tujuan'];
-			$isi_disposisi	= $_POST['isi_disposisi'];
+			$isi_disposisi	= '';
 			$sifat 			= $_POST['sifat'];
 			$batas_waktu 	= InggrisTgl($_POST['batas_waktu']);
 			$catatan 		= $_POST['catatan'];
@@ -67,12 +67,12 @@
 									</select>
 								</div>
 							</div>
-							<div class="item form-group">
+							<!-- <div class="item form-group">
 								<label class="control-label col-md-3 col-sm-3 col-xs-12">Isi Disposisi<span class="required">&nbsp;</span></label>
 								<div class="col-md-6 col-sm-6 col-xs-12">
 									<input type="text" name="isi_disposisi" class="form-control col-md-7 col-xs-12" required="required">
 								</div>
-							</div>
+							</div> -->
 							<div class="item form-group">
 								<label class="control-label col-md-3 col-sm-3 col-xs-12">Batas Waktu<span class="required">&nbsp;</span></label>
 								<div class="col-md-6 col-sm-6 col-xs-12">

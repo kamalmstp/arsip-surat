@@ -1,4 +1,9 @@
 	<?php
+
+		$query 	= "SELECT * FROM surat_keluar";
+		$sql   	= mysqli_query($connect, $query);
+		$count	= mysqli_num_rows($sql); 
+
 		if (isset($_REQUEST['submit'])) {
 			$no_agenda		= $_POST['no_agenda'];
 			$no_surat		= $_POST['no_surat'];
@@ -50,11 +55,11 @@
 							<div class="item form-group">
 								<label class="control-label col-md-3 col-sm-3 col-xs-12">No Agenda<span class="required">&nbsp; :</span></label>
 								<div class="col-md-6 col-sm-6 col-xs-12">
-									<input type="text" name="no_agenda" class="form-control col-md-7 col-xs-12" required="required">
+									<input readonly="readonly" value="<?php echo $count+1;?>" name="no_agenda" class="form-control col-md-7 col-xs-12" required="required">
 								</div>
 							</div>
 							<div class="item form-group">
-								<label class="control-label col-md-3 col-sm-3 col-xs-12">No surat<span class="required">&nbsp; :</span></label>
+								<label class="control-label col-md-3 col-sm-3 col-xs-12">No Berkas<span class="required">&nbsp; :</span></label>
 								<div class="col-md-6 col-sm-6 col-xs-12">
 									<input type="text" name="no_surat" class="form-control col-md-7 col-xs-12" required="required">
 								</div>
@@ -62,7 +67,14 @@
 							<div class="item form-group">
 								<label class="control-label col-md-3 col-sm-3 col-xs-12">Jenis Surat<span class="required">&nbsp; :</span></label>
 								<div class="col-md-6 col-sm-6 col-xs-12">
-									<input type="text" name="jenis_surat" class="form-control col-md-7 col-xs-12" required="required">
+									<select name="jenis_surat" class="form-control col-md-7 col-xs-12">
+										<option value="">--Pilih Jenis Surat--</option>
+										<option value="Surat Keluar">Surat Keluar</option>
+										<option value="Nota Dinas">Nota Dinas</option>
+										<option value="SPBA">SPBA</option>
+										<option value="Rekomendasi">Rekomendasi</option>
+									</select>
+									<!-- <input type="text" name="jenis_surat" class="form-control col-md-7 col-xs-12" required="required"> -->
 								</div>
 							</div>
 							<div class="item form-group">

@@ -46,8 +46,9 @@
 								<tr style="font-size: 13px;">
 									<th width="1" style="vertical-align: middle;">No</th>
 									<th style="vertical-align: middle;"><center>Tujuan</center></th>
-									<th style="vertical-align: middle;"><center>Isi Disposisi</center></th>
+									<!-- <th style="vertical-align: middle;"><center>Isi Disposisi</center></th> -->
 									<th style="vertical-align: middle;"><center>Sifat, <br> Batas Waktu</center></th>
+									<th style="vertical-align: middle;"><center>Catatan</center></th>
 									<th style="vertical-align: middle;"><center>Action</center></th>
 								</tr>
 							</thead>
@@ -61,8 +62,8 @@
 									?>
 									<td width="1" style="vertical-align: middle;"><?php echo $no++; ?></td>
 									<td style="vertical-align: middle;"><?php echo $row['tujuan']; ?></td>
-									<td style="vertical-align: middle;"><?php echo $row['isi_disposisi']; ?></td>
 									<td style="vertical-align: middle;"><?php echo $row['sifat']?>, <br><?php echo IndonesiaTgl($row['batas_waktu']);?></td>
+									<td style="vertical-align: left;"><?php echo $row['catatan']; ?></td>
 									<td>
 										<center>
 											<a href="index.php?page=edit_disposisi&id=<?php echo $id_surat ?>&id_disp=<?php echo $row['id_disp'] ?>" class="btn btn-warning" title="Edit"><i class="fa fa-pencil-square-o"></i></a>

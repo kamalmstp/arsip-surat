@@ -36,8 +36,8 @@
 								<tr style="font-size: 13px;">
 									<th width="1" style="vertical-align: middle;">No</th>
 									<th style="vertical-align: middle;"><center>No Surat</center></th>
-									<th style="vertical-align: middle;"><center>Isi Disposisi</center></th>
 									<th style="vertical-align: middle;"><center>Sifat, <br> Batas Waktu</center></th>
+									<th style="vertical-align: middle;"><center>Catatan</center></th>
 									<th style="vertical-align: middle;"><center>Action</center></th>
 								</tr>
 							</thead>
@@ -51,8 +51,8 @@
 									?>
 									<td width="1" style="vertical-align: middle;"><?php echo $no++; ?></td>
 									<td style="vertical-align: middle;"><?php echo $row['no_surat']; ?></td>
-									<td style="vertical-align: middle;"><?php echo $row['isi_disposisi']; ?></td>
 									<td style="vertical-align: middle;"><?php echo $row['sifat']?>, <br><?php echo IndonesiaTgl($row['batas_waktu']);?></td>
+									<td style="vertical-align: middle;"><?php echo $row['catatan']; ?></td>
 									<td>
 										<center>
                                         <a href="cetak_limjamsos.php?id=<?php echo $row['id_disp']; ?>" class="btn btn-success" title="Print" type="submit" target="_blank" name="cetak"><i class="fa fa-print"></i></a>

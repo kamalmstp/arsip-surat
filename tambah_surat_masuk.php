@@ -1,4 +1,9 @@
 	<?php
+
+		$query 	= "SELECT * FROM surat_masuk";
+		$sql   	= mysqli_query($connect, $query);
+		$count	= mysqli_num_rows($sql); 
+
 		if (isset($_REQUEST['submit'])) {
 			$no_agenda 		= $_POST['no_agenda'];
 			$no_surat		= $_POST['no_surat'];
@@ -51,7 +56,7 @@
 							<div class="item form-group">
 								<label class="control-label col-md-3 col-sm-3 col-xs-12">No Agenda<span class="required">&nbsp; :</span></label>
 								<div class="col-md-6 col-sm-6 col-xs-12">
-									<input type="text" name="no_agenda" class="form-control col-md-7 col-xs-12"  required="required">
+									<input readonly="readonly" value="<?php echo $count+1; ?>" name="no_agenda" class="form-control col-md-7 col-xs-12"  required="required">
 								</div>
 							</div>
 							<div class="item form-group">
