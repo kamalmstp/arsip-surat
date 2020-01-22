@@ -63,12 +63,26 @@
 		</div>
 		<br>
 
-			<?php
-						$query	= "SELECT * FROM disposisi JOIN surat_masuk ON disposisi.id_surat = surat_masuk.id";
+		<?php
+				if (isset($_POST['cetak'])) {
+					$dari_tanggal = InggrisTgl($_POST['dari_tanggal']);
+					$sampai_tanggal= InggrisTgl($_POST['sampai_tanggal']);
+
+					//indonesia Tgl
+					$dari_tanggal_indo = IndonesiaTgl($dari_tanggal);
+					$sampai_tanggal_indo= IndonesiaTgl($sampai_tanggal);
+
+					if ($_REQUEST['dari_tanggal']=="" || $_REQUEST['sampai_tanggal']=="") {
+						echo '<script>
+								window.location.href="./index.php?page=semua";
+						 	 </script>';
+						die();
+					}else{
+						$query	= "SELECT * FROM disposisi JOIN surat_masuk ON disposisi.id_surat = surat_masuk.id where batas_waktu between '$dari_tanggal' and '$sampai_tanggal'";
 						$sql    = mysqli_query($connect, $query);
 			?>
 			<div class="col-md-10">
-				<h4><strong>LAPORAN DATA DISPOSISI</strong></h4>
+				<h4><strong>LAPORAN DATA DISPOSISI DARI TANGGAL <?php echo $dari_tanggal_indo;?> SAMPAI TANGGAL <?php echo $sampai_tanggal_indo;?></strong></h4>
 			</div>	
 				<table id="table" border="1" cellspacing="0" cellpadding="5" width="100%">
 					<thead>
@@ -83,10 +97,9 @@
 					</thead>
 					<tbody>
 						<?php
-							if (mysqli_num_rows($sql) >0) {
+							if (mysqli_num_rows($sql) > 0) {
 								$no=1;
 								while ($data = mysqli_fetch_array($sql)) {
-									
 						?>
 						<td width="1"><?php echo $no++; ?></td>
 						<td><?php echo $data['no_surat']?></td>
@@ -97,11 +110,13 @@
 
 						
 					</tbody>
-					<?php			
+					<?php 
 								}
 							}else{
-								echo '<tr><td colspan="9"><center><h2><strong>Tidak ada Data</></strong></h2></center></td></tr>';
+								echo '<tr><td colspan="9"><center><h2><strong>Tidak ada Agenda surat Keluar</></strong></h2></center></td></tr>';
 							}
+							}
+						}	
 					?>
 						
 				</table>

@@ -54,9 +54,9 @@
 							<br/>
 							<div class="separator">
 								<div>
-									<h2>SISTEM INFORMASI ARSIP SURAT</h2>
+									<h2>SISTEM MANAJEMEN SURAT MENYURAT</h2>
 									<br/>
-									<p><strong>© 2019-2020</strong> All Right Reserved</P>
+									<p><strong>© 2020</strong> All Right Reserved</P>
 								</div>
 							</div>
 						</form>

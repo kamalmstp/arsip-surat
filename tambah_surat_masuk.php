@@ -68,7 +68,14 @@
 							<div class="item form-group">
 								<label class="control-label col-md-3 col-sm-3 col-xs-12">Jenis Surat<span class="required">&nbsp; :</span></label>
 								<div class="col-md-6 col-sm-6 col-xs-12">
-									<input type="text" name="jenis_surat" class="form-control col-md-7 col-xs-12" required="required">
+									<select name="jenis_surat" class="form-control col-md-7 col-xs-12">
+										<option value="">--Pilih Jenis Surat--</option>
+										<option value="Surat Keluar">Surat Masuk</option>
+										<option value="Nota Dinas">Nota Dinas</option>
+										<option value="SPBA">SPBA</option>
+										<option value="Rekomendasi">Rekomendasi</option>
+									</select>
+									<!-- <input type="text" name="jenis_surat" class="form-control col-md-7 col-xs-12" required="required"> -->
 								</div>
 							</div>
 							<div class="item form-group">

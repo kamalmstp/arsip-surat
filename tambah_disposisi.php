@@ -74,7 +74,7 @@
 								</div>
 							</div> -->
 							<div class="item form-group">
-								<label class="control-label col-md-3 col-sm-3 col-xs-12">Batas Waktu<span class="required">&nbsp;</span></label>
+								<label class="control-label col-md-3 col-sm-3 col-xs-12">Tanggal Surat<span class="required">&nbsp;</span></label>
 								<div class="col-md-6 col-sm-6 col-xs-12">
 									<input type="text" name="batas_waktu" class="form-control has-feedback-left" id="tanggal">
 									<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
