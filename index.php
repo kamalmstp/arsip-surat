@@ -123,12 +123,7 @@
 								<h3>Setting</h3>
 								<ul class="nav side-menu">
 									<li><a href="index.php?page=users"><i class="fa fa-user"></i> Users </a></li>
-									<!-- <li><a><i class="fa fa-files-o"></i> Data <span class="fa fa-chevron-down"></span></a>
-										<ul class="nav child_menu">
-											<li><a href="index.php?page=backup">Backup</a></li>
-											<li><a href="index.php?page=restore">Restore</a></li>
-										</ul>
-									</li> -->
+									<li><a href="index.php?page=pimpinan"><i class="fa fa-user"></i> Pimpinan </a></li>
 								</ul>
 							 <?php
 							 }
@@ -231,6 +226,8 @@
 						//settings  
 						}elseif ($_GET['page']=="users") {
 							include 'users.php';
+						}elseif ($_GET['page']=="pimpinan") {
+							include 'pimpinan.php';
 						}elseif ($_GET['page']=="tambah_users") {
 							include 'tambah_users.php';
 						}elseif ($_GET['page']=="edit_users") {
